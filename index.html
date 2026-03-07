@@ -143,6 +143,7 @@ margin-top:30px;
 
 .final h2 {
 font-size: 2rem;
+text-shadow:0 0 8px rgba(0,0,0,0.4);
 }
 
 .final p {
@@ -158,10 +159,26 @@ audio{
 margin-top:15px;
 }
 
+     #roseParticles{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:0;
+}
+
+.container{
+position:relative;
+z-index:2;
+}
+
 </style>
 </head>
 
 <body>
+     <canvas id="roseParticles"></canvas>
 
 <div class="container">
 
@@ -204,9 +221,56 @@ Happy birthday to you.
 
 <script>
 
+const canvas = document.getElementById("roseParticles");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+for(let i=0;i<60;i++){
+particles.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*3+1,
+speedY:Math.random()*0.5+0.2,
+speedX:(Math.random()-0.5)*0.3,
+opacity:Math.random()
+});
+}
+
+function animateParticles(){
+ctx.clearRect(0,0,canvas.width,canvas.height);
+
+particles.forEach(p=>{
+p.y -= p.speedY;
+p.x += p.speedX;
+
+if(p.y < 0){
+p.y = canvas.height;
+p.x = Math.random()*canvas.width;
+}
+
+ctx.beginPath();
+ctx.arc(p.x,p.y,p.size,0,Math.PI*2);
+ctx.fillStyle = "rgba(255,120,150,"+p.opacity+")";
+ctx.fill();
+});
+
+requestAnimationFrame(animateParticles);
+}
+
+animateParticles();
+
 // stage 1
+//setTimeout(()=>{
+//document.getElementById("rose").classList.add("fadeout")
+//},3000)
 setTimeout(()=>{
 document.getElementById("rose").classList.add("fadeout")
+document.getElementById("roseParticles").style.transition="opacity 2s"
+document.getElementById("roseParticles").style.opacity="0"
 },3000)
 
 // stage 2
@@ -282,7 +346,7 @@ document.body.style.background="purple"
 
 setTimeout(()=>{document.body.style.background="pink"},900)
 
-setTimeout(()=>{document.body.style.background="gold"},1300)
+setTimeout(()=>{document.body.style.background="#D4AF37"},1300)
 
 },14000)
 
