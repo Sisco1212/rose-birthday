@@ -92,24 +92,34 @@ border:4px solid white;
 opacity:0;
 }
 
-@keyframes fadeIn{
-to{opacity:1}
+@keyframes fadeInOut{
+0% {
+opacity: 0;
+}
+     
+25%{opacity:1}
+
+50%{opacity:1}
+
+75%{opacity:1}
+
+100%{opacity:0}
 }
 
 .top1{top:50px; left:15%;
-     animation:fadeIn 2s 2s forwards;
+     animation:fadeInOut 2s 4s forwards;
       
      }
 .top2{top:50px; right:15%;
-     animation:fadeIn 4s 2s forwards;
+     animation:fadeInOut 6s 4s forwards;
       
      }
 .bottom1{bottom:80px; left:20%;
-        animation:fadeIn 6s 2s forwards;
+        animation:fadeInOut 8s 4s forwards;
          
         }
 .bottom2{bottom:80px; right:20%;
-        animation:fadeIn 8s 2s forwards;
+        animation:fadeInOut 10s 4s forwards;
          
         }
 
@@ -216,7 +226,7 @@ document.getElementById("loveWord").style.opacity=1
 // YOU
 setTimeout(()=>{
 document.getElementById("youWord").style.opacity=1
-},7500)
+},8000)
 
 // background transition
 setTimeout(()=>{
