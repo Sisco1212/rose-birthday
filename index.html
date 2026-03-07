@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Rose 🌹</title>
+
+<style>
+
+body{
+margin:0;
+background:black;
+color:white;
+font-family: 'Segoe UI', sans-serif;
+overflow-x:hidden;
+text-align:center;
+}
+
+.container{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+position:relative;
+}
+
+/* TEXT ANIMATION */
+
+.reveal{
+font-size:3rem;
+overflow:hidden;
+white-space:nowrap;
+border-right:3px solid transparent;
+width:0;
+animation:reveal 2s forwards;
+}
+
+@keyframes reveal{
+from{width:0}
+to{width:100%}
+}
+
+.fadeout{
+animation:fadeout 1s forwards;
+}
+
+@keyframes fadeout{
+to{opacity:0}
+}
+
+/* LOVE TEXT */
+
+.love{
+position:absolute;
+bottom:120px;
+font-weight:bold;
+display:flex;
+gap:20px;
+font-size:3rem;
+}
+
+.love span{
+opacity:0;
+}
+
+.smallI{
+font-size:1.5rem;
+align-self:flex-end;
+}
+
+/* MEMORY PHOTOS */
+
+.memories{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+}
+
+.memory{
+position:absolute;
+width:120px;
+border-radius:15px;
+border:4px solid white;
+opacity:0;
+animation:fadeIn 2s forwards;
+}
+
+@keyframes fadeIn{
+to{opacity:1}
+}
+
+.top1{top:60px; left:15%;}
+.top2{top:80px; right:15%;}
+.bottom1{bottom:100px; left:20%;}
+.bottom2{bottom:120px; right:20%;}
+
+/* FINAL SECTION */
+
+.final{
+display:none;
+flex-direction:column;
+align-items:center;
+margin-top:30px;
+}
+
+.final img{
+width:200px;
+margin-top:20px;
+}
+
+audio{
+margin-top:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 id="rose" class="reveal">My Rose.</h1>
+
+<h1 id="birthday" class="reveal" style="display:none;">
+Happy birthday to you
+</h1>
+
+<div class="love" id="love">
+<span class="smallI" id="i">I</span>
+<span id="loveWord">LOVE</span>
+<span id="youWord">YOU</span>
+</div>
+
+<div class="memories">
+
+<img src="photo1.jpg" class="memory top1">
+<img src="photo2.jpg" class="memory top2">
+<img src="photo3.jpg" class="memory bottom1">
+<img src="photo4.jpg" class="memory bottom2">
+
+</div>
+
+<div class="final" id="final">
+
+<h2>Enjoy your day ❤️</h2>
+
+<img src="birthday.gif">
+
+<p>HI! Please click this 👇🏾</p>
+
+<audio controls>
+<source src="voice.mp3" type="audio/mpeg">
+</audio>
+
+</div>
+
+</div>
+
+<script>
+
+// stage 1
+setTimeout(()=>{
+document.getElementById("rose").classList.add("fadeout")
+},3000)
+
+// stage 2
+setTimeout(()=>{
+document.getElementById("rose").style.display="none"
+document.getElementById("birthday").style.display="block"
+},4000)
+
+// show memories
+setTimeout(()=>{
+document.querySelectorAll(".memory").forEach(m=>{
+m.style.opacity=1
+})
+},5000)
+
+// I
+setTimeout(()=>{
+document.getElementById("i").style.opacity=1
+},6000)
+
+// LOVE
+setTimeout(()=>{
+document.getElementById("loveWord").style.opacity=1
+},7000)
+
+// YOU
+setTimeout(()=>{
+document.getElementById("youWord").style.opacity=1
+},7500)
+
+// background transition
+setTimeout(()=>{
+
+document.body.style.transition="background 1.8s"
+
+document.body.style.background="purple"
+
+setTimeout(()=>{document.body.style.background="pink"},600)
+
+setTimeout(()=>{document.body.style.background="gold"},1200)
+
+},10000)
+
+// show final message
+setTimeout(()=>{
+document.getElementById("final").style.display="flex"
+},12000)
+
+</script>
+
+</body>
+</html>
