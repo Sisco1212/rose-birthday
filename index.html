@@ -215,6 +215,12 @@ document.getElementById("rose").style.display="none"
 document.getElementById("birthday").style.display="block"
 },4000)
 
+setTimeout(()=>{
+document.getElementById("birthday").classList.add("fadeout")
+document.getElementById("birthday").style.display="none"
+     
+},13500)
+
 // show memories
 //setTimeout(()=>{
 //document.querySelectorAll(".memory").forEach(m=>{
@@ -274,9 +280,9 @@ document.body.style.transition="background 2s"
 
 document.body.style.background="purple"
 
-setTimeout(()=>{document.body.style.background="pink"},600)
+setTimeout(()=>{document.body.style.background="pink"},900)
 
-setTimeout(()=>{document.body.style.background="gold"},1200)
+setTimeout(()=>{document.body.style.background="gold"},1300)
 
 },14000)
 
