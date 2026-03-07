@@ -92,35 +92,33 @@ border:4px solid white;
 opacity:0;
 }
 
-@keyframes fadeInOut{
-0% {
+@keyframes fadeIn{
+to {
+opacity: 1;
+}
+
+@keyframes fadeOutt{
+to {
 opacity: 0;
 }
      
-25%{opacity:1}
-
-50%{opacity:1}
-
-75%{opacity:1}
-
-100%{opacity:0}
 }
 
 .top1{top:50px; left:15%;
-     animation:fadeInOut 4s 2s forwards;
-      
+     animation:fadeIn 2s 2s;
+      animation:fadeOutt 2s 10s;
      }
 .top2{top:50px; right:15%;
-     animation:fadeInOut 4s 6s forwards;
-      
+     animation:fadeIn 2s 4s;
+      animation:fadeOutt 2s 11s;
      }
 .bottom1{bottom:80px; left:20%;
-        animation:fadeInOut 4s 8s forwards;
-         
+        animation:fadeIn 2s 6s;
+         animation:fadeOutt 2s 12s;
         }
 .bottom2{bottom:80px; right:20%;
-        animation:fadeInOut 4s 10s forwards;
-         
+        animation:fadeIn 2s 8s;
+         animation:fadeOutt 2s 13s;
         }
 
 /* FINAL SECTION */
