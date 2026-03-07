@@ -142,12 +142,12 @@ margin-top:30px;
 }
 
 .final h2 {
-font-size: 2rem;
-text-shadow:0 0 8px rgba(0,0,0,0.4);
+font-size: 2.5rem;
+text-shadow:0 0 4px rgba(0,0,0,0.2);
 }
 
 .final p {
-font-size: 1.5rem;
+font-size: 1rem;
 }
 
 .final img{
@@ -264,14 +264,14 @@ requestAnimationFrame(animateParticles);
 animateParticles();
 
 // stage 1
-//setTimeout(()=>{
-//document.getElementById("rose").classList.add("fadeout")
-//},3000)
 setTimeout(()=>{
 document.getElementById("rose").classList.add("fadeout")
+},3000)
+     
+setTimeout(()=>{
 document.getElementById("roseParticles").style.transition="opacity 2s"
 document.getElementById("roseParticles").style.opacity="0"
-},3000)
+},14000)
 
 // stage 2
 setTimeout(()=>{
@@ -346,7 +346,7 @@ document.body.style.background="purple"
 
 setTimeout(()=>{document.body.style.background="pink"},900)
 
-setTimeout(()=>{document.body.style.background="#D4AF37"},1300)
+setTimeout(()=>{document.body.style.background="#C9C46B"},1300)
 
 },14000)
 
