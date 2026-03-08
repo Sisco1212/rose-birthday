@@ -6,14 +6,26 @@
 <title>For My Rose 🌹</title>
 
 <style>
+/* @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap'); */
+
+
+
+* {
+/* font-family: 'Montserrat', sans-serif; */
+}
+
 
 body{
 margin:0;
 background:black;
 color:white;
-font-family: 'Segoe UI', sans-serif;
 overflow-x:hidden;
 text-align:center;
+font-family: 'Montserrat', sans-serif; 
 }
 
 .container{
@@ -33,7 +45,7 @@ overflow:hidden;
 white-space:nowrap;
 border-right:3px solid transparent;
 width:0;
-animation:reveal 2s forwards;
+animation:reveal 5s forwards;
 }
 
 .reveal#birthday {
@@ -62,10 +74,12 @@ font-weight:bold;
 display:flex;
 gap:20px;
 font-size:3rem;
+
 }
 
 .love span{
 opacity:0;
+ font-family:"Dancing Script", cursive;
 }
 
 .smallI{
@@ -196,10 +210,10 @@ Happy birthday to you.
 
 <div class="memories">
 
-<img src="IMG-20250713-WA0006.jpg" class="memory top1">
-<img src="IMG-20250720-WA0000.jpg" class="memory top2">
-<img src="IMG-20250720-WA0002.jpg" class="memory bottom1">
-<img src="IMG-20250817-WA0016.jpg" class="memory bottom2">
+<img src="pic.jpg" class="memory top1">
+<img src="pic4.jpg" class="memory top2">
+<img src="pic3.jpg" class="memory bottom1">
+<img src="pic6.jpg" class="memory bottom2">
 
 </div>
 
@@ -209,10 +223,10 @@ Happy birthday to you.
 
 <img src="birthday.gif">
 
-<p>Please click this!👇🏾</p>
+<p>Please play this!👇🏾</p>
 
 <audio controls>
-<source src="voice.mp3" type="audio/mpeg">
+<source src="Birthday.aac" type="audio/mpeg">
 </audio>
 
 </div>
@@ -357,6 +371,7 @@ setTimeout(()=>{document.body.style.background="#D4AF37"},1300)
 // show final message
 setTimeout(()=>{
 document.getElementById("final").style.display="flex"
+document.getElementById("love").style.display="none"
      blastConfetti();
 },16000)
 
